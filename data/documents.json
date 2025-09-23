@@ -1,0 +1,12 @@
+[
+  {"id": 1, "title": "Intro to Databases", "tags": ["db", "sql"], "published": true, "metadata": {"pages": 120}},
+  {"id": 2, "title": "Advanced Python", "tags": ["python", "mypy"], "published": false},
+  {"id": 3, "title": "Data Engineering", "metadata": {"pages": 300}},
+  {"id": 4, "title": "Machine Learning", "tags": ["ml", "ai"], "published": true},
+  {"id": 5, "title": "Data Visualization", "tags": ["viz"], "metadata": {"pages": 80}},
+  {"id": 6, "title": "Cloud Computing", "tags": ["cloud"], "published": false, "metadata": {"pages": 200}},
+  {"id": 7, "title": "Distributed Systems"},
+  {"id": 8, "title": "Operating Systems", "tags": ["os"], "published": true},
+  {"id": 9, "title": "Networks", "metadata": {"pages": 150}},
+  {"id": 10, "title": "Security", "tags": ["crypto", "network"], "published": false}
+]

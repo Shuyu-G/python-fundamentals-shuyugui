@@ -1,8 +1,11 @@
-from typing import List, Optional, Dict, Tuple
-from utils import hallo
 import sys
+from typing import Dict, List, Optional, Tuple
+
+from src.utils import hallo
+
+
 def to_ints(items: List[str]) -> List[Optional[int]]:
-    # Try to convert strings to integers; return None if not possible
+    """Try to convert strings to integers; return None if not possible."""
     out: List[Optional[int]] = []
     for s in items:
         try:
@@ -11,13 +14,18 @@ def to_ints(items: List[str]) -> List[Optional[int]]:
             out.append(None)
     return out
 
+
 def main() -> None:
     # Variables
     title: str = "Data Analyzer"
     version: int = 1
     person: Dict[str, str] = {"name": "Shuyu", "role": "student"}
     coords: Tuple[int, int] = (3, 5)
-    numbers_raw: List[str] = sys.argv[1:] if len(sys.argv) > 1 else ["10", "20", "abc", "30"]
+    print("Coords tuple:", coords)
+
+    numbers_raw: List[str] = (
+        sys.argv[1:] if len(sys.argv) > 1 else ["10", "20", "abc", "30"]
+    )
 
     # Import from utils.py
     print(f"{title} v{version}")
@@ -52,6 +60,7 @@ def main() -> None:
     # Built-in functions: range, id
     print("range example:", list(range(3)))
     print("id(doubled):", id(doubled))
+
 
 if __name__ == "__main__":
     main()
