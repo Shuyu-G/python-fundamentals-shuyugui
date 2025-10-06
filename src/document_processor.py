@@ -12,7 +12,7 @@ class Document(BaseModel):
     title: str
     tags: Optional[List[str]] = None
     published: Optional[bool] = None
-    metadata: Optional[Dict[str, int]] = None  
+    metadata: Optional[Dict[str, int]] = None
 
 
 def load_documents(path: str | Path) -> List[Document]:

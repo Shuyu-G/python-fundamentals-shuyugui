@@ -1,0 +1,36 @@
+- email: alice@example.com
+  id: 1
+  is_active: true
+  name: Alice
+  profile:
+    age: 28
+    city: Berlin
+  tags:
+  - admin
+  - beta
+- email: bob@example.com
+  id: 2
+  is_active: false
+  name: Bob
+  profile:
+    age: 31
+    city: Bremen
+  tags: []
+- email: carol@example.com
+  id: 3
+  is_active: true
+  name: Carol
+  profile:
+    age: 24
+    city: Hamburg
+  tags:
+  - new
+- email: dave@example.com
+  id: 4
+  is_active: true
+  name: Dave
+  profile:
+    age: 35
+    city: Munich
+  tags:
+  - staff

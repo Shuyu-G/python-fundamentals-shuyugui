@@ -1,0 +1,5 @@
+id,name,email,is_active,tags,profile
+1,Alice,alice@example.com,True,"['admin', 'beta']","{'age': 28, 'city': 'Berlin'}"
+2,Bob,bob@example.com,False,[],"{'age': 31, 'city': 'Bremen'}"
+3,Carol,carol@example.com,True,['new'],"{'age': 24, 'city': 'Hamburg'}"
+4,Dave,dave@example.com,True,['staff'],"{'age': 35, 'city': 'Munich'}"
