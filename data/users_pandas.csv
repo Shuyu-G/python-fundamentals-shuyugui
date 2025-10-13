@@ -1,0 +1,7 @@
+id,name,email,age,height_cm,signup_date,active,city
+1,Alice,alice@example.com,28,165.0,2024-03-01,yes,Berlin
+2,Bob,bob@example.com,31,,01/04/2024,no,Bremen
+3,Carol,carol@example.com,24,170.5,2024/05/10,yes,
+4,Dave,dave@example.com,?,180.2,10-06-2024,yes,Munich
+5,Eve,eve@example.com,29,,2024-07-15,no,Cologne
+6,Eve2,alice@example.com,29,171.0,invalid,no,
