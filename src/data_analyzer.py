@@ -16,7 +16,6 @@ def to_ints(items: List[str]) -> List[Optional[int]]:
 
 
 def main() -> None:
-    # Variables
     title: str = "Data Analyzer"
     version: int = 1
     person: Dict[str, str] = {"name": "Shuyu", "role": "student"}
@@ -26,20 +25,15 @@ def main() -> None:
     numbers_raw: List[str] = (
         sys.argv[1:] if len(sys.argv) > 1 else ["10", "20", "abc", "30"]
     )
-
-    # Import from utils.py
     print(f"{title} v{version}")
     print(hallo(person["name"]))
 
-    # String to int casting
     maybe_ints: List[Optional[int]] = to_ints(numbers_raw)
     print("Casted:", maybe_ints)
 
-    # For loop + enumerate
     for i, v in enumerate(maybe_ints):
         print(f"item[{i}] = {v}")
 
-    # Conditionals
     if None in maybe_ints:
         print("There were invalid numbers.")
     elif len(maybe_ints) > 5:
@@ -47,7 +41,6 @@ def main() -> None:
     else:
         print("All valid and short list.")
 
-    # While loop
     doubled: List[int] = []
     idx = 0
     while idx < len(maybe_ints):
@@ -57,7 +50,6 @@ def main() -> None:
         idx += 1
     print("Doubled:", doubled)
 
-    # Built-in functions: range, id
     print("range example:", list(range(3)))
     print("id(doubled):", id(doubled))
 

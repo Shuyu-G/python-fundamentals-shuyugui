@@ -9,7 +9,6 @@ import time
 from pathlib import Path
 from pydantic import BaseModel
 
-# ---------- 1) Example user data in multiple formats ----------
 
 DATA_DIR = Path("data")
 DATA_DIR.mkdir(exist_ok=True)
@@ -49,18 +48,14 @@ users = [
     },
 ]
 
-# Save JSON
 with open(DATA_DIR / "users.json", "w", encoding="utf-8") as f:
     json.dump(users, f, indent=2)
 
-# Save YAML
 with open(DATA_DIR / "users.yaml", "w", encoding="utf-8") as f:
     yaml.dump(users, f)
 
-# Save CSV
 pd.DataFrame(users).to_csv(DATA_DIR / "users.csv", index=False)
 
-# Save XML
 xml_content = "<users>\n"
 for u in users:
     xml_content += (
@@ -69,9 +64,6 @@ for u in users:
 xml_content += "</users>"
 with open(DATA_DIR / "users.xml", "w", encoding="utf-8") as f:
     f.write(xml_content)
-
-
-# ---------- 2) Define User structure in different ways ----------
 
 
 class ProfileTD(TypedDict):
@@ -116,8 +108,6 @@ class UserModel(BaseModel):
     profile: Dict[str, Any]
 
 
-# ---------- 3) Decorator to measure execution time ----------
-
 R = TypeVar("R")
 
 
@@ -134,9 +124,6 @@ def timeit(fn: Callable[..., R]) -> Callable[..., R]:
     return wrapper
 
 
-# ---------- 4) Compare list vs NumPy performance ----------
-
-
 @timeit
 def scalar_vec_mul_list(vec: List[float], scalar: float) -> List[float]:
     return [scalar * x for x in vec]
@@ -147,16 +134,10 @@ def scalar_vec_mul_numpy(vec: np.ndarray, scalar: float) -> np.ndarray:
     return scalar * vec
 
 
-# ---------- 5) Load CSV into Pandas ----------
-
-
 def demo_pandas_load_csv() -> None:
     print("\n=== Pandas load CSV ===")
     df = pd.read_csv(DATA_DIR / "users.csv")
     print("CSV content:\n", df)
-
-
-# ---------- 6) Main ----------
 
 
 def main() -> None:

@@ -25,10 +25,10 @@ def insert_user(db: Session, username: str, email: str, age: int) -> None:
         db.add(new_user)
         db.commit()
         db.refresh(new_user)
-        print(f"✅ User '{username}' added successfully.")
+        print(f" User '{username}' added successfully.")
     except Exception as e:
         db.rollback()
-        print(f"❌ Failed to insert user '{username}':", e)
+        print(f" Failed to insert user '{username}':", e)
 
 
 def update_user_age(db: Session, username: str, new_age: int) -> None:
@@ -40,29 +40,29 @@ def update_user_age(db: Session, username: str, new_age: int) -> None:
     # Safe check for number of affected rows (for SQLAlchemy 2.x compatibility)
     count = getattr(result, "rowcount", 0)
     if count:
-        print(f"✅ Updated '{username}' age to {new_age}.")
+        print(f" Updated '{username}' age to {new_age}.")
     else:
-        print(f"⚠️ No user found with username '{username}'.")
+        print(f" No user found with username '{username}'.")
 
 
 def main() -> None:
     """Main workflow for database operations."""
     db = SessionLocal()
 
-    print("\n📋 All users in database:")
+    print("\ All users in database:")
     for u in get_all_users(db):
         print(f" - {u}")
 
-    print("\n🔎 Find user 'alice':")
+    print("\ Find user 'alice':")
     print(get_user_by_name(db, "alice"))
 
-    print("\n➕ Insert new user:")
+    print("\ Insert new user:")
     insert_user(db, "david", "david@example.com", 27)
 
-    print("\n✏️ Update user age:")
+    print("\ Update user age:")
     update_user_age(db, "bob", 35)
 
-    print("\n📋 Users after changes:")
+    print("\ Users after changes:")
     for u in get_all_users(db):
         print(f" - {u}")
 
